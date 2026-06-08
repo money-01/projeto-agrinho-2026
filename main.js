@@ -1,22 +1,22 @@
-// AGUARDA O CARREGAMENTO COMPLETO DO DOCUMENTO
+// ESCUTA O EVENTO DE CARREGAMENTO INICIAL DO NAVEGADOR
 document.addEventListener("DOMContentLoaded", () => {
-    inicializarMenu();
+    gerenciarMenu();
 });
 
-/* -----------------------------------------
-   1. FUNCIONALIDADE: MENU RESPONSIVO
------------------------------------------ */
-function inicializarMenu() {
+/* ==========================================================================
+   FUNCIONALIDADE 1: MENU RESPONSIVO (OCULTAR / EXIBIR)
+   ========================================================================== */
+function gerenciarMenu() {
     const menuToggle = document.getElementById("menuToggle");
     const appNav = document.getElementById("appNav");
     const navLinks = document.querySelectorAll(".nav-link");
 
-    // Abre/Fecha o menu ao clicar no botão hambúrguer
+    // Altera o estado de visualização do menu flutuante
     menuToggle.addEventListener("click", () => {
         appNav.classList.toggle("open");
     });
 
-    // Fecha o menu automaticamente ao clicar em qualquer link interno
+    // Força o menu a fechar após o clique em uma das seções
     navLinks.forEach(link => {
         link.addEventListener("click", () => {
             appNav.classList.remove("open");
@@ -24,91 +24,91 @@ function inicializarMenu() {
     });
 }
 
-/* -----------------------------------------
-   2. FUNCIONALIDADE: CARDS INFORMATIVOS
------------------------------------------ */
-function revelarDetalhe(cardSelecionado) {
-    // Localiza o parágrafo de detalhes oculto dentro do card clicado
-    const detalhe = cardSelecionado.querySelector(".card-detail");
+/* ==========================================================================
+   FUNCIONALIDADE 2: CARDS INFORMATIVOS INTERATIVOS
+   ========================================================================== */
+function revelarDetalhe(card) {
+    // Captura o elemento oculto dentro do card clicado
+    const detalhe = card.querySelector(".card-detail");
     
-    // Altera a classe 'hidden' (escondido/visível)
+    // Liga ou desliga a visibilidade usando a classe utilitária do CSS
     detalhe.classList.toggle("hidden");
     
-    // Feedback visual opcional: destaca de leve o card ativo
+    // Aplica um feedback visual na borda para destacar módulos abertos
     if (!detalhe.classList.contains("hidden")) {
-        cardSelecionado.style.borderColor = "var(--cor-principal)";
+        card.style.borderColor = "var(--cor-principal)";
     } else {
-        cardSelecionado.style.borderColor = "#ddd";
+        card.style.borderColor = "rgba(0, 230, 118, 0.15)";
     }
 }
 
-/* -----------------------------------------
-   3. FUNCIONALIDADE: LINHA DO TEMPO
------------------------------------------ */
-// Dados fictícios estruturados que mudarão dinamicamente na tela
-const dadosLinhaTempo = [
+/* ==========================================================================
+   FUNCIONALIDADE 3: LINHA DO TEMPO DA AGRICULTURA
+   ========================================================================== */
+// Banco de dados contendo o histórico a ser impresso na tela
+const historicoAgro = [
     {
-        titulo: "Agricultura Tradicional",
-        texto: "Processos manuais, alta dependência do clima sem dados precisos e maior esforço físico para o produtor rural."
+        titulo: "Fase 01: Agricultura Tradicional",
+        texto: "Processos manuais ou analógicos de alta tração física. Forte dependência do clima sem ferramentas de previsão e baixa eficiência por hectare."
     },
     {
-        titulo: "Agricultura Conectada (Hoje)",
-        texto: "Uso de drones para mapeamento de pragas, tratores guiados por GPS e sensores que medem a umidade do solo em tempo real."
+        titulo: "Fase 02: Agricultura Digital (Hoje)",
+        texto: "Sensoriamento ativo do solo, uso de drones de pulverização localizada, tratores guiados por telemetria de satélites e monitoramento por aplicativos móveis."
     },
     {
-        titulo: "Agricultura Autônoma (Amanhã)",
-        texto: "Inteligência Artificial prevendo colheitas com meses de antecedência, robôs cuidando do plantio e emissão zero de carbono."
+        titulo: "Fase 03: Agricultura Autônoma (Amanhã)",
+        texto: "Maquinários que operam sem motoristas, inteligência artificial fazendo previsão meteorológica de safras anuais completas e emissão neutra de carbono."
     }
 ];
 
-function mudarLinhaTempo(index, elementoClicado) {
-    // Remove o status 'active' de todas as etapas da linha do tempo
+function mudarLinhaTempo(indice, itemClicado) {
+    // Localiza e limpa o destaque de todas as etapas da linha do tempo
     const todosItens = document.querySelectorAll(".timeline-item");
     todosItens.forEach(item => item.classList.remove("active"));
     
-    // Adiciona o status 'active' apenas na etapa clicada
-    elementoClicado.classList.add("active");
+    // Adiciona o destaque gráfico exclusivo ao elemento ativo clicado
+    itemClicado.classList.add("active");
     
-    // Atualiza o conteúdo da caixa de texto explicativa
-    const boxConteudo = document.getElementById("timelineContent");
-    boxConteudo.innerHTML = `
-        <h3>${dadosLinhaTempo[index].titulo}</h3>
-        <p>${dadosLinhaTempo[index].texto}</p>
+    // Atualiza a caixa de texto dinâmica com as informações coletadas do array
+    const painelConteudo = document.getElementById("timelineContent");
+    painelConteudo.innerHTML = `
+        <h3>${historicoAgro[indice].titulo}</h3>
+        <p>${historicoAgro[indice].texto}</p>
     `;
 }
 
-/* -----------------------------------------
-   4. FUNCIONALIDADE: CALCULADORA ECOLÓGICA
------------------------------------------ */
+/* ==========================================================================
+   FUNCIONALIDADE 4: SIMULADOR ECOLÓGICO (CÁLCULOS LOGÍSTICOS)
+   ========================================================================== */
 function calcularImpacto() {
-    const inputHectares = document.getElementById("hectares");
-    const resultadoCalc = document.getElementById("resultadoCalc");
+    const inputArea = document.getElementById("hectares");
+    const containerResultado = document.getElementById("resultadoCalc");
     
-    // Pega o valor digitado e transforma em número inteiro
-    const hectares = parseInt(inputHectares.value);
+    // Converte o valor inserido para número inteiro
+    const totalHectares = parseInt(inputArea.value);
     
-    // Validação simples para evitar campos vazios ou números negativos
-    if (isNaN(hectares) || hectares <= 0) {
-        alert("Por favor, digite um número válido de hectares maior que zero.");
+    // Validador de dados para impedir envios nulos ou negativos
+    if (isNaN(totalHectares) || totalHectares <= 0) {
+        alert("Erro: Código de dados inválido. Insira um número de hectares acima de zero.");
         return;
     }
     
-    // Cálculos lógicos baseados em estimativas médias de sustentabilidade:
-    // - 15.000 litros de água economizados por hectare/ano com gotejamento inteligente
-    // - Redução estável de até 35% de defensivos químicos usando IA e sensores
-    // - 1 hectare tecnológico gera energia limpa para cerca de 2 casas
-    const aguaEconomizada = hectares * 15000;
-    const reducaoInsumos = 35; 
-    const energiaCasas = hectares * 2;
+    // Regras matemáticas fictícias baseadas em médias de tecnologia no campo:
+    // - Economia média anual de 15.000 litros de água por hectare monitorado.
+    // - Redução estável de 35% de agrotóxicos devido ao mapeamento inteligente de pragas.
+    // - Geração de energia limpa (painéis/biomassa) que abastece 2 lares rurais por hectare.
+    const litrosAgua = totalHectares * 15000;
+    const porcCortada = 35;
+    const residenciasSuportadas = totalHectares * 2;
     
-    // Injeta os resultados processados nas respectivas tags HTML
-    document.getElementById("resAgua").innerText = aguaEconomizada.toLocaleString('pt-BR');
-    document.getElementById("resInsumos").innerText = reducaoInsumos;
-    document.getElementById("resEnergia").innerText = energiaCasas;
+    // Exibe e escreve os dados gerados nas tags de destino no HTML
+    document.getElementById("resAgua").innerText = litrosAgua.toLocaleString('pt-BR');
+    document.getElementById("resInsumos").innerText = porcCortada;
+    document.getElementById("resEnergia").innerText = residenciasSuportadas;
     
-    // Remove a classe 'hidden' para exibir o painel de resultados na tela do app
-    resultadoCalc.classList.remove("hidden");
+    // Libera a exibição do bloco removendo a trava do 'hidden'
+    containerResultado.classList.remove("hidden");
     
-    // Faz a rolagem automática até o resultado para melhorar a experiência do usuário
-    resultadoCalc.scrollIntoView({ behavior: 'smooth' });
+    // Desloca o campo de visão da tela para focar diretamente na resposta processada
+    containerResultado.scrollIntoView({ behavior: 'smooth' });
 }

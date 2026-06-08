@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agrinho 2026 - Conectando o Futuro</title>
+    <title>Agrinho 2026 - AgroTech</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,7 +12,7 @@
         
         <header class="app-header">
             <div class="logo">
-                <span>Agrinho</span><span class="ano">2026</span>
+                AGRO<span>TECH</span> <small class="ano">2026</small>
             </div>
             <button class="menu-toggle" id="menuToggle" aria-label="Abrir Menu">
                 <span class="bar"></span>
@@ -20,11 +20,11 @@
                 <span class="bar"></span>
             </button>
             <nav class="app-nav" id="appNav">
-                <a href="#introducao" class="nav-link">Início</a>
+                <a href="#introducao" class="nav-link">Painel Inicial</a>
                 <a href="#sustentabilidade" class="nav-link">Sustentabilidade</a>
-                <a href="#tecnologia" class="nav-link">Tecnologia</a>
-                <a href="#impactos" class="nav-link">Impactos</a>
-                <a href="#calculadora" class="nav-link">Calculadora</a>
+                <a href="#tecnologia" class="nav-link">Evolução Tech</a>
+                <a href="#impactos" class="nav-link">Indicadores</a>
+                <a href="#calculadora" class="nav-link">Simulador Eco</a>
             </nav>
         </header>
 
@@ -32,112 +32,113 @@
 
             <section class="hero-banner" id="introducao">
                 <div class="hero-overlay">
-                    <h1>Sustentabilidade & Tecnologia no Campo</h1>
-                    <p>Descubra como o Agrinho 2026 está cultivando a inovação para construir um amanhã melhor.</p>
-                    <a href="#calculadora" class="btn-primary">Testar Calculadora</a>
+                    <div class="status-badge">● SISTEMA ONLINE</div>
+                    <h1>Conectando a Terra ao Futuro</h1>
+                    <p>O Agrinho 2026 apresenta a integração de dados, automação e inteligência ecológica no campo.</p>
+                    <a href="#calculadora" class="btn-primary">Iniciar Simulador</a>
                 </div>
             </section>
 
             <section class="section-padding">
-                <h2 class="section-title">O que é o Agrinho 2026?</h2>
-                <p class="text-p">O Agrinho 2026 convida estudantes e comunidades a explorar a união perfeita entre a sabedoria da terra e o poder da tecnologia digital. Nosso objetivo é mostrar que a produção de alimentos e a preservação do planeta andam de mãos dadas.</p>
+                <h2 class="section-title">> Diretriz Agrinho 2026</h2>
+                <p class="text-p">Uma iniciativa voltada a transformar a produção agrícola através da inovação consciente. O futuro do agro depende do equilíbrio exato entre códigos tecnológicos e o respeito aos ciclos da natureza.</p>
             </section>
 
             <section class="section-padding section-alt" id="sustentabilidade">
-                <h2 class="section-title">Sustentabilidade no Campo</h2>
-                <p class="section-subtitle">Toque nos cards para descobrir nossas práticas essenciais:</p>
+                <h2 class="section-title">> Gestão Sustentável</h2>
+                <p class="section-subtitle">Toque nos módulos abaixo para expandir os dados:</p>
                 
                 <div class="cards-grid">
                     <div class="info-card" onclick="revelarDetalhe(this)">
                         <div class="card-icon">💧</div>
-                        <h3>Uso da Água</h3>
-                        <p class="card-short">Manejo consciente e irrigação precisa.</p>
-                        <p class="card-detail hidden">Gotejamento automatizado e sensores de umidade no solo evitam o desperdício de água em até 40%.</p>
+                        <h3>[Módulo Água]</h3>
+                        <p class="card-short">Irrigação de precisão por sensores.</p>
+                        <p class="card-detail hidden">Sistemas conectados medem a umidade do solo em tempo real, reduzindo o bombeamento desnecessário e poupando até 40% dos recursos hídricos.</p>
                     </div>
                     <div class="info-card" onclick="revelarDetalhe(this)">
-                        <div class="card-icon">☀️</div>
-                        <h3>Energia Limpa</h3>
-                        <p class="card-short">O sol que alimenta as plantações.</p>
-                        <p class="card-detail hidden">Uso de painéis solares para mover bombas de irrigação e alimentar sensores tecnológicos no campo.</p>
+                        <div class="card-icon">⚡</div>
+                        <h3>[Matriz Limpa]</h3>
+                        <p class="card-short">Captação fotovoltaica no campo.</p>
+                        <p class="card-detail hidden">Uso de painéis solares inteligentes que alimentam roteadores, sensores e cercas elétricas de manejo rotacionado sem gastar energia da rede comercial.</p>
                     </div>
                     <div class="info-card" onclick="revelarDetalhe(this)">
-                        <div class="card-icon">🌱</div>
-                        <h3>Preservação</h3>
-                        <p class="card-short">A proteção das matas nativas.</p>
-                        <p class="card-detail hidden">Reflorestamento de áreas ciliares e rotação de culturas para manter o solo rico e saudável de forma natural.</p>
+                        <div class="card-icon">🌲</div>
+                        <h3>[Eco Proteção]</h3>
+                        <p class="card-short">Monitoramento de áreas nativas.</p>
+                        <p class="card-detail hidden">Reflorestamento estratégico auxiliado por inteligência artificial e drones para preservação biológica de matas ciliares e encostas.</p>
                     </div>
                 </div>
             </section>
 
             <section class="section-padding" id="tecnologia">
-                <h2 class="section-title">A Evolução e a Tecnologia</h2>
-                <p class="section-subtitle">A evolução das ferramentas no campo. Clique nas etapas:</p>
+                <h2 class="section-title">> Linha de Evolução</h2>
+                <p class="section-subtitle">Selecione a época para carregar o histórico de produção:</p>
 
                 <div class="timeline">
                     <div class="timeline-item active" onclick="mudarLinhaTempo(0, this)">
                         <div class="timeline-dot"></div>
-                        <h4>Passado: Tradicional</h4>
+                        <h4>01. Passado</h4>
                     </div>
                     <div class="timeline-item" onclick="mudarLinhaTempo(1, this)">
                         <div class="timeline-dot"></div>
-                        <h4>Presente: Conectado</h4>
+                        <h4>02. Presente</h4>
                     </div>
                     <div class="timeline-item" onclick="mudarLinhaTempo(2, this)">
                         <div class="timeline-dot"></div>
-                        <h4>Futuro: Autônomo</h4>
+                        <h4>03. Futuro</h4>
                     </div>
                 </div>
 
                 <div class="timeline-content-box" id="timelineContent">
-                    <h3>Agricultura Tradicional</h3>
-                    <p>Processos manuais, alta dependência do clima sem dados precisos e maior esforço físico para o produtor rural.</p>
+                    <h3>Fase 01: Agricultura Tradicional</h3>
+                    <p>Processos manuais ou analógicos de alta tração física. Forte dependência do clima sem ferramentas de previsão e baixa eficiência por hectare.</p>
                 </div>
             </section>
 
             <section class="section-padding section-alt" id="impactos">
-                <h2 class="section-title">Impactos Positivos</h2>
+                <h2 class="section-title">> Impacto dos Indicadores</h2>
                 <div class="impacts-list">
                     <div class="impact-item">
-                        <strong>Para o Produtor:</strong> Menos gastos com insumos e maior rentabilidade financeira na colheita.
+                        <strong>Produtores:</strong> Otimização de insumos químicos e redução de custos logísticos e operacionais.
                     </div>
                     <div class="impact-item">
-                        <strong>Para as Cidades:</strong> Alimentos mais saudáveis, seguros, sem resíduos e preços mais estáveis.
+                        <strong>Cidades:</strong> Recebimento de alimentos limpos, rastreáveis por QR Code e livres de desperdício.
                     </div>
                     <div class="impact-item">
-                        <strong>Para o Meio Ambiente:</strong> Redução drástica das emissões de carbono e conservação ativa do solo.
+                        <strong>Meio Ambiente:</strong> Recuperação ativa do solo e neutralização das emissões de gases poluentes.
                     </div>
                 </div>
             </section>
 
             <section class="section-padding" id="calculadora">
-                <h2 class="section-title">Calculadora Agro-Ecológica</h2>
-                <p class="section-subtitle">Simule o impacto positivo da tecnologia na sua propriedade fictícia:</p>
+                <h2 class="section-title">> Simulador Eco-Digital</h2>
+                <p class="section-subtitle">Projete os ganhos sustentáveis baseados na área da fazenda:</p>
                 
                 <div class="calc-box">
                     <div class="form-group">
-                        <label for="hectares">Tamanho da propriedade (em Hectares):</label>
-                        <input type="number" id="hectares" placeholder="Ex: 10" min="1">
+                        <label for="hectares">Área de Cultivo Monitorada (Hectares):</label>
+                        <input type="number" id="hectares" placeholder="Digite a área (ex: 25)" min="1">
                     </div>
-                    <button class="btn-primary btn-block" onclick="calcularImpacto()">Calcular Impacto</button>
+                    <button class="btn-primary btn-block" onclick="calcularImpacto()">Processar Dados do Solo</button>
                     
                     <div class="calc-result hidden" id="resultadoCalc">
-                        <h3>🌱 Seu Impacto Estimado por Ano:</h3>
-                        <p>💧 <strong>Água economizada:</strong> <span id="resAgua">0</span> litros.</p>
-                        <p>📉 <strong>Redução de defensivos:</strong> <span id="resInsumos">0</span>% devido a sensores de precisão.</p>
-                        <p>🔋 <strong>Energia limpa gerada:</strong> Equivalente a abastecer <span id="resEnergia">0</span> casas.</p>
+                        <h3>[RELATÓRIO DE IMPACTO ESTIMADO/ANO]</h3>
+                        <p>💧 <strong>Água Poupada:</strong> <span id="resAgua">0</span> L/ano.</p>
+                        <p>📉 <strong>Químicos Reduzidos:</strong> <span id="resInsumos">0</span>% de aplicação precisa.</p>
+                        <p>🔋 <strong>Energia Autônoma:</strong> Abastecimento para <span id="resEnergia">0</span> residências rurais.</p>
                     </div>
                 </div>
             </section>
 
             <section class="section-padding section-conclusao">
-                <h2>O Futuro se Cultiva Agora!</h2>
-                <p>"A tecnologia nos dá as ferramentas, a natureza nos dá a vida, e nós fazemos a escolha de criar um amanhã sustentável."</p>
+                <h2>CULTIVANDO O AMANHÃ</h2>
+                <p>"A tecnologia escreve as linhas de código, mas a terra dita o ritmo da vida. O futuro sustentável já começou."</p>
             </section>
 
         </main>
 
         <footer class="app-footer">
-            <p>© 2026 Agrinho - Desenvolvido com ❤️ para um futuro melhor.</p>
+            <p>// CORE_SISTEMA: AGRINHO 2026 // PROJETO ESCOLAR INTERATIVO</p>
         </footer>
 
     </div>
